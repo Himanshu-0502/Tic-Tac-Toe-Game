@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #282c34;
+    color: #ffffff;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    background-color: #444;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #61dafb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #21a1f1;
+}
+
+.cross .cross-mark {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.cross .cross-mark::before,
+.cross .cross-mark::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    background-color: #ff6347;
+    border-radius: 5px;
+    translate: 45px;
+}
+
+.cross .cross-mark::before {
+    transform: rotate(135deg);
+}
+
+.cross .cross-mark::after {
+    transform: rotate(45deg);
+}
+
+.circle .circle-mark {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #32cd32; /* Updated to green */
+    border-radius: 50%;
+}
+
+.winning-message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #61dafb;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.show {
+    display: block;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #282c34;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #21a1f1;
+}
